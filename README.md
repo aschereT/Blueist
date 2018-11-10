@@ -1,6 +1,9 @@
 # Blueist
 Automatically downloads all VC redistributables and installs them
 
+# Instructions
+Just run the script. By default, installs only the redistributables for your PC's architecture and does it in unattended mode (shows progress bars but no interaction other than UAC required). Files will be deleted when the script is done.
+
 # Sources used:
 
  - https://github.com/WPN-XM/vcredist
