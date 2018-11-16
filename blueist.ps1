@@ -35,19 +35,23 @@ function Download-EXE ($name, $url) {
 function Install-EXE ($name) {
     Switch -w ($name) {
         "[36][24]2005.exe" {
-            . "./$name" "/q"
+            $c = "./$name /q | Out-Null"
+            Invoke-Expression $c
             break;
         }
         "[36][24]2008.exe" {
-            . "./$name" "/qb!"
+            $c = "./$name /qb! | Out-Null"
+            Invoke-Expression $c
             break;
         }
         "[36][24]201[02].exe" {
-            . "./$name" "/passive" "/norestart"
+            $c = "./$name /passive /norestart | Out-Null"
+            Invoke-Expression $c
             break;
         }
         "[36][24]201[357].exe" {
-            . "./$name" "/install" "/passive" "/norestart"
+            $c = "./$name /install /passive /norestart | Out-Null"
+            Invoke-Expression $c
             break;
         }
     }
@@ -77,7 +81,7 @@ function Process ($list) {
 }
 
 function main {
-    if ($method -ne 's' -Or $method -ne 'u' -Or $method -ne 'a') {
+    if ($method -ne 's' -and $method -ne 'u' -and $method -ne 'a') {
         #Invalid switch
         Write-Error "Method accepts s for silent install, u for unattended installs, or a for attended installs"
         return
