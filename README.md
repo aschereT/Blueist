@@ -16,8 +16,6 @@ Just run the script. By default, installs only the redistributables for your PC'
 # TODO
 
  - Flags to:
-	 - Keep downloaded files
-	 - Install both architectures
 	 - Toggle silent/unattended/attended installs
 - Run installers one by one on unattended and attended installs
 - Obtain links from WPN-XM repo directly instead of hard-coded array
