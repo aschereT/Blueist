@@ -37,12 +37,12 @@ function Install-EXE ($name) {
             break;
         }
         "[36][24]2008.exe" {
-            $c = "./$name /qb! | Out-Null"
+            $c = "Start-Process -FilePath $name -ArgumentList @('/qb!') -verb RunAs | Out-Null"
             Invoke-Expression $c
             break;
         }
         "[36][24]201[02].exe" {
-            $c = "./$name /passive /norestart | Out-Null"
+            $c = "Start-Process -FilePath $name -ArgumentList @('/passive', '/norestart') -verb RunAs | Out-Null"
             Invoke-Expression $c
             break;
         }
